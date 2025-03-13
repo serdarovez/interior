@@ -9,8 +9,13 @@ import carpet2 from "../src/assets/carpet2.png";
 import shelf1 from "../src/assets/shelf1.png";
 import shelf2 from "../src/assets/shelf2.png";
 
+// Define a type for the categories object
+type CategoryKey = "wall" | "shelf" | "carpet" | "sofa";
+
 function App() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<CategoryKey | null>(
+    null
+  );
   const [selectedImages, setSelectedImages] = useState({
     wall: wall1,
     shelf: shelf1,
@@ -19,19 +24,19 @@ function App() {
   });
   const [showVariants, setShowVariants] = useState(false);
 
-  const categories = {
+  const categories: Record<CategoryKey, string[]> = {
     wall: [wall1, wall2],
     shelf: [shelf1, shelf2],
     carpet: [carpet1, carpet2],
     sofa: [sofa1, sofa2],
   };
 
-  const handleCategoryClick = (category: string) => {
+  const handleCategoryClick = (category: CategoryKey) => {
     setActiveCategory(category);
     setShowVariants(true); // Show variants and hide buttons
   };
 
-  const handleVariantClick = (category: string, variant: string) => {
+  const handleVariantClick = (category: CategoryKey, variant: string) => {
     setSelectedImages((prev) => ({
       ...prev,
       [category]: variant,
