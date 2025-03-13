@@ -51,7 +51,6 @@ function App() {
   return (
     <div
       className="relative min-h-screen bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: `url(${background})` }}
     >
       {/* Background Image */}
       <div
@@ -129,7 +128,7 @@ function App() {
       {showVariants && activeCategory && (
         <svg
           onClick={handleApplyChanges}
-          className="bg-black rounded-full absolute top-[2%] right-[2%] opacity-75 hover:opacity-100 p-2"
+          className="bg-green-800 rounded-full absolute bottom-[15%] right-[40%] opacity-75 hover:opacity-100 p-2"
           xmlns="http://www.w3.org/2000/svg"
           width="44"
           height="44"
@@ -152,7 +151,7 @@ function App() {
                   onClick={() => handleVariantClick(activeCategory, variant)}
                   className={`relative bg-white rounded-2xl w-20 h-20 cursor-pointer border-2 ${
                     selectedImages[activeCategory] === variant
-                      ? "border-black border-3"
+                      ? "border-green-800 border-3"
                       : "border-transparent"
                   }`}
                 >
