@@ -81,7 +81,7 @@ function App() {
       {!showVariants && (
         <div>
           <svg
-            className="absolute bg-black p-1 opacity-70 rounded-full top-[40%] left-[15%] z-[10]"
+            className="absolute bg-black p-1 opacity-70 rounded-full top-[40%] left-[20%] z-[10]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             id="location"
@@ -92,7 +92,7 @@ function App() {
             <path d="M12,2a8,8,0,0,0-8,8c0,5.4,7.05,11.5,7.35,11.76a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,17.65c-2.13-2-6-6.31-6-9.65a6,6,0,0,1,12,0C18,13.34,14.13,17.66,12,19.65ZM12,6a4,4,0,1,0,4,4A4,4,0,0,0,12,6Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,12Z" />
           </svg>
           <svg
-            className="absolute bg-black p-1 opacity-70 rounded-full bottom-[15%] left-[35%] z-[10]"
+            className="absolute bg-black p-1 opacity-70 rounded-full bottom-[10%] left-[35%] z-[10]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             id="location"
@@ -103,7 +103,7 @@ function App() {
             <path d="M12,2a8,8,0,0,0-8,8c0,5.4,7.05,11.5,7.35,11.76a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,17.65c-2.13-2-6-6.31-6-9.65a6,6,0,0,1,12,0C18,13.34,14.13,17.66,12,19.65ZM12,6a4,4,0,1,0,4,4A4,4,0,0,0,12,6Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,12Z" />
           </svg>
           <svg
-            className="absolute bg-black p-1 opacity-70 rounded-full bottom-[25%] right-[25%] z-[10]"
+            className="absolute bg-black p-1 opacity-70 rounded-full bottom-[22%] right-[30%] z-[10]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             id="location"
