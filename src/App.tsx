@@ -2,12 +2,16 @@ import { useState } from "react";
 import background from "../src/assets/background.jpg";
 import wall1 from "../src/assets/wall1.png";
 import wall2 from "../src/assets/wall2.png";
+import wall3 from "../src/assets/wall3.png";
 import sofa1 from "../src/assets/sofa1.png";
 import sofa2 from "../src/assets/sofa2.png";
+import sofa3 from "../src/assets/sofa3.png";
 import carpet1 from "../src/assets/carpet1.png";
 import carpet2 from "../src/assets/carpet2.png";
+import carpet3 from "../src/assets/carpet3.png";
 import shelf1 from "../src/assets/shelf1.png";
 import shelf2 from "../src/assets/shelf2.png";
+import shelf3 from "../src/assets/shelf3.png";
 
 // Define a type for the categories object
 type CategoryKey = "wall" | "shelf" | "carpet" | "sofa";
@@ -25,10 +29,10 @@ function App() {
   const [showVariants, setShowVariants] = useState(false);
 
   const categories: Record<CategoryKey, string[]> = {
-    wall: [wall1, wall2],
-    shelf: [shelf1, shelf2],
-    carpet: [carpet1, carpet2],
-    sofa: [sofa1, sofa2],
+    wall: [wall1, wall2, wall3],
+    shelf: [shelf1, shelf2, shelf3],
+    carpet: [carpet1, carpet2, carpet3],
+    sofa: [sofa1, sofa2, sofa3],
   };
 
   const handleCategoryClick = (category: CategoryKey) => {
@@ -49,9 +53,7 @@ function App() {
   };
 
   return (
-    <div
-      className="relative min-h-screen bg-cover bg-center overflow-hidden"
-    >
+    <div className="relative min-h-screen bg-cover bg-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
