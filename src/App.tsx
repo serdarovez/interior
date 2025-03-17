@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import background from "../src/assets/background.jpg";
 import wall1 from "../src/assets/wall1.png";
 import wall2 from "../src/assets/wall2.png";
@@ -27,6 +27,7 @@ function App() {
     sofa: sofa1,
   });
   const [showVariants, setShowVariants] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const categories: Record<CategoryKey, string[]> = {
     wall: [wall1, wall2, wall3],
@@ -51,6 +52,46 @@ function App() {
     setShowVariants(false); // Hide variants and show buttons
     setActiveCategory(null); // Reset active category
   };
+
+  // Function to preload images
+  const preloadImages = (imageUrls: string[]) => {
+    const promises = imageUrls.map((url) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    return Promise.all(promises);
+  };
+
+  useEffect(() => {
+    // Combine all image URLs into a single array
+    const allImageUrls = [
+      background,
+      ...Object.values(categories).flat(),
+      ...Object.values(selectedImages),
+    ];
+
+    // Preload all images
+    preloadImages(allImageUrls)
+      .then(() => {
+        setIsLoading(false); // All images are loaded, hide the loading spinner
+      })
+      .catch((error) => {
+        console.error("Error loading images:", error);
+      });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-cover bg-center overflow-hidden">
