@@ -101,6 +101,11 @@ function App() {
         style={{ backgroundImage: `url(${background})` }}
       />
 
+      {/* Title Container */}
+      <div className="absolute top-0 left-0 right-0 p-4 text-center bg-gradient-to-b from-black/60 via-black/40 z-10 to-black/0">
+        <h1 className="text-white text-3xl font-bold">Room Customizer</h1>
+      </div>
+
       {/* Overlay Images */}
       {[
         { src: selectedImages.wall, alt: "wall", name: "wall", zIndex: 1 },
